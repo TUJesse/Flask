@@ -22,10 +22,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    text = "Hello, how are you?"
+    text = "Bonjour"
     language = detect(text)
+    #message = f"The detected language is: {language}"
 
-    print(f"The detected language is: {language}")
+    # return f"The detected language is: {language}"
+    return render_template('templates/index.html')
 
 app.run(port=5000)
 
