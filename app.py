@@ -27,7 +27,7 @@ def home():
     #message = f"The detected language is: {language}"
 
     # return f"The detected language is: {language}"
-    return render_template('templates/index.html')
+    return render_template('index.html')
 
 app.run(port=5000)
 
