@@ -14,10 +14,7 @@ def predict():
     language = detect(text)
 
 
-    if text  is not None:
-        return f"The detected language is: {language}"
-    else:
-        return "no language inputted"
+    return f"The detected language is: {language}"
     
 
 if __name__ == '__main__':
