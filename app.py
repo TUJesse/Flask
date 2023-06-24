@@ -1,33 +1,24 @@
-# from flask import Flask, request,render_template
-# import pickle
-
-# app = Flask(__name__)
-
-# @app.route('/')
-# def home():
-#     return "hello guys"
-
-# app.run(port=5000)
-
-from flask import Flask, request,render_template
+from flask import Flask, render_template, request
 from langdetect import detect
 
 app = Flask(__name__)
 
-# text = "Hello, how are you?"
-
-# language = detect(text)
-
-# print(f"The detected language is: {language}")
 
 @app.route('/')
 def home():
-    text = "Bonjour"
-    language = detect(text)
-    #message = f"The detected language is: {language}"
-
-    # return f"The detected language is: {language}"
     return render_template('index.html')
 
-app.run(port=5000)
+@app.route('/predict.html', methods=['POST'])
+def predict():
+    text = request.form['langInput']
+    language = detect(text)
 
+
+    if text  is not None:
+        return f"The detected language is: {language}"
+    else:
+        return "no language inputted"
+    
+
+if __name__ == '__main__':
+    app.run()

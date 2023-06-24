@@ -6,12 +6,9 @@
 <body>
     <h1>Welcome to Language detection!</h1>
 
-    <!-- <label for="langInput">Input a sentence in any language:</label><br>
-    <input type="text" id="langInput" name="langInput"> -->
-
-    <form action="/predict" method="POST">
+    <form action="predict.html" method="POST">
         <label for="langInput">Input a sentence in any language:</label>
-        <input type="text" id="langInput" name="langInput">
+        <input type="text" id="langInput" name="langInput" required>
         <input type="submit" value="Submit">
     </form>
 
